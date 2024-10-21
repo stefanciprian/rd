@@ -15,34 +15,39 @@ This repository contains Python code for:
 
 To run the notebook, follow these steps:
 
-## Clone the repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/stefanciprian/rd.git
 ```
 
-Install the required dependencies:
+### Install the required dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the Jupyter Notebook:
+### Run the Jupyter Notebook
 
 ```bash
 jupyter notebook prices_and_volumes.ipynb
 ```
 
-Files
-prices_and_volumes.ipynb: The main notebook file containing code for analyzing stock prices and volumes.
+## Files
 
-Features
-Data loading and processing: Load historical stock data from CSV.
-Visualization: Generate plots to visualize stock trends and volumes.
-Moving averages: Calculate and display various moving averages for price trends.
-Volume analysis: Inspect trading volume to identify patterns.
+- **prices_and_volumes.ipynb**: The main notebook file containing code for analyzing stock prices and volumes.
 
-How to Use
+## Features
+
+- **Data loading and processing**: Load historical stock data from CSV.
+- **Visualization**: Generate plots to visualize stock trends and volumes.
+- **Moving averages**: Calculate and display various moving averages for price trends.
+- **Volume analysis**: Inspect trading volume to identify patterns.
+
+## How to Use
+
 After loading your stock data, the notebook will guide you through various analytical steps such as calculating statistics, applying technical indicators, and visualizing results.
-Contributing
+
+## Contributing
+
 Feel free to contribute to this project by submitting a pull request or reporting an issue.
