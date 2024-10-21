@@ -39,10 +39,18 @@ jupyter notebook prices_and_volumes.ipynb
 
 ## Features
 
-- **Data loading and processing**: Load historical stock data from CSV.
-- **Visualization**: Generate plots to visualize stock trends and volumes.
-- **Moving averages**: Calculate and display various moving averages for price trends.
-- **Volume analysis**: Inspect trading volume to identify patterns.
+- **Load Data**: Load historical stock data from CSV/yfinance.
+- **ARIMA**: Implement AutoRegressive Integrated Moving Average for time series forecasting.
+- **Bayesian**: Apply Bayesian methods for statistical analysis.
+- **Fractional Gaussian Noise (fGn)**: Analyze data with fractional Gaussian noise characteristics.
+- **Fractional Lévy Stable Motion (FLSM)**: Model data using fractional Lévy stable motion.
+- **Higuchi Fractal Dimension**: Calculate the Higuchi fractal dimension for time series.
+- **Hurst Exponent**: Estimate the Hurst exponent to assess long-term memory of time series.
+- **Linear Regression**: Perform linear regression analysis on stock data.
+- **Lorenz System**: Analyze the Lorenz system for chaotic behavior.
+- **Markov**: Implement Markov models for predictive analysis.
+- **Pearson**: Calculate Pearson correlation coefficients for data relationships.
+- **Random Forest**: Use random forest algorithms for classification and regression tasks.
 
 ## How to Use
 
