@@ -1,32 +1,42 @@
 //@version=5
-strategy("Enter at 60, Sell at 20% Gain, Re-enter at 30% Drop", overlay=true)
+strategy("Profit 70% Renter -30%", overlay=true)
 
 // Parameters
-initialEntryPrice = 60
-takeProfitPercent = 20
-reentryDropPercent = 30
+initialEntryPrice = 12  // Start price as a float
+tp = 1.7  // Take profit percentage
+re = 0.7  // Reentry percentage
+
+// Timeline: All
+// tp = 1.7 and re 0.3 profit: 12.36 USD
+// tp = 1.7 and re 0.5 profit: 13.45 USD 
+// tp = 1.7 and re 0.6 profit: 32.83 USD 
+// tp = 1.7 and re 0.7 profit: 35.88 USD 
+// tp = 1.7 and re 0.8 profit: 28.68 USD 
+
+// Function to round to 3 decimal places
+roundToThreeDecimals(value) =>
+    math.round(value * 1000) / 1000
 
 // Calculate dynamic levels
-var float entryPrice = na // Entry price variable
-var float takeProfitPrice = na // Take profit price variable
-var float reentryPrice = na // Reentry price variable
-
-if (na(entryPrice)) // Initialize entry price on the first run
-    entryPrice := initialEntryPrice
-    takeProfitPrice := entryPrice * (1 + takeProfitPercent / 100)
-    reentryPrice := entryPrice * (1 - reentryDropPercent / 100)
+var float entryPrice = 12  // Entry price variable
+var float takeProfitPrice = 14  // Take profit price variable
+var float reentryPrice = 12  // Reentry price variable
 
 // Check for entry condition
 longCondition = close <= entryPrice
 if (longCondition)
     strategy.entry("Buy", strategy.long)
-    takeProfitPrice := close * (1 + takeProfitPercent / 100)
-    reentryPrice := close * (1 - reentryDropPercent / 100)
+    takeProfitPrice := roundToThreeDecimals(close * tp)
+    reentryPrice := roundToThreeDecimals(close * re)
 
 // Check for exit condition
 exitCondition = close >= takeProfitPrice
 if (exitCondition)
     strategy.close("Buy")
-    entryPrice := close * (1 - reentryDropPercent / 100)
-    takeProfitPrice := close * (1 + takeProfitPercent / 100)
-    reentryPrice := close * (1 - reentryDropPercent / 100)
+    entryPrice := roundToThreeDecimals(close * re)
+    takeProfitPrice := roundToThreeDecimals(close * tp)
+    reentryPrice := roundToThreeDecimals(close * re)
+
+// Plot levels for debugging
+plot(roundToThreeDecimals(takeProfitPrice), color=color.red, title="Take Profit Price")
+plot(roundToThreeDecimals(reentryPrice), color=color.blue, title="Reentry Price")

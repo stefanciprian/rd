@@ -1,9 +1,9 @@
 //@version=5
-strategy("Entry at 19, Exit at 28", overlay=true)
+strategy("Entry at 46, Exit at 140", overlay=true)
 
 // Define entry and exit levels
-entryPrice = 19
-exitPrice = 28
+entryPrice = 46
+exitPrice = 140
 
 // Check if current price crosses the entry price
 longCondition = close <= entryPrice
