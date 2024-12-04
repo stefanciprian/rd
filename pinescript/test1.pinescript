@@ -1,0 +1,16 @@
+//@version=5
+strategy("Entry at 19, Exit at 28", overlay=true)
+
+// Define entry and exit levels
+entryPrice = 19
+exitPrice = 28
+
+// Check if current price crosses the entry price
+longCondition = close <= entryPrice
+if (longCondition)
+    strategy.entry("Buy", strategy.long)
+
+// Check if current price reaches the exit price
+exitCondition = close >= exitPrice
+if (exitCondition)
+    strategy.close("Buy")

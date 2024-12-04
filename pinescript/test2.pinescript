@@ -1,0 +1,32 @@
+//@version=5
+strategy("Enter at 60, Sell at 20% Gain, Re-enter at 30% Drop", overlay=true)
+
+// Parameters
+initialEntryPrice = 60
+takeProfitPercent = 20
+reentryDropPercent = 30
+
+// Calculate dynamic levels
+var float entryPrice = na // Entry price variable
+var float takeProfitPrice = na // Take profit price variable
+var float reentryPrice = na // Reentry price variable
+
+if (na(entryPrice)) // Initialize entry price on the first run
+    entryPrice := initialEntryPrice
+    takeProfitPrice := entryPrice * (1 + takeProfitPercent / 100)
+    reentryPrice := entryPrice * (1 - reentryDropPercent / 100)
+
+// Check for entry condition
+longCondition = close <= entryPrice
+if (longCondition)
+    strategy.entry("Buy", strategy.long)
+    takeProfitPrice := close * (1 + takeProfitPercent / 100)
+    reentryPrice := close * (1 - reentryDropPercent / 100)
+
+// Check for exit condition
+exitCondition = close >= takeProfitPrice
+if (exitCondition)
+    strategy.close("Buy")
+    entryPrice := close * (1 - reentryDropPercent / 100)
+    takeProfitPrice := close * (1 + takeProfitPercent / 100)
+    reentryPrice := close * (1 - reentryDropPercent / 100)
