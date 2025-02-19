@@ -36,6 +36,7 @@ jupyter notebook prices_and_volumes.ipynb
 ## Files
 
 - **prices_and_volumes.ipynb**: The main notebook file containing code for analyzing stock prices and volumes.
+- **vix.ipynb**: Notebook with VIX tests.
 
 ## Features
 
