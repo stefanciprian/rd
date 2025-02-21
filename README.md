@@ -1,19 +1,19 @@
-# R & D - Prices and Volumes Analysis
+# R & D
 
-This project focuses on analyzing stock prices and trading volumes using Python. The analysis is performed using Jupyter Notebooks, providing a comprehensive approach to examining financial data. The project can be used to extract insights from stock market trends by processing and visualizing price and volume data.
+This project focuses on analyzing stock prices, trading volumes, VIX using Python. The analysis is performed using Jupyter Notebooks, providing a comprehensive approach to examining financial data. The project can be used to extract insights from stock market trends by processing and visualizing price and volume data.
 
 ## Project Overview
 
 This repository contains Python code for:
 
-- Reading stock prices and trading volume data from CSV files
+- Reading stock prices and trading volume data from CSV files or using yfinance
 - Cleaning and preprocessing the data
 - Calculating statistical summaries (e.g., moving averages, returns, etc.)
 - Visualizing stock price movements and trading volume trends
 
 ## Installation
 
-To run the notebook, follow these steps:
+To run the notebooks, follow these steps:
 
 ### Clone the repository
 
@@ -63,6 +63,18 @@ jupyter notebook prices_and_volumes.ipynb
 - **Random Forest**: Use random forest algorithms for classification and regression tasks.
 - **Rössler Attractor - Chaotic Algorithm**: Study chaotic dynamics with the Rössler attractor.
 - **Standard Map (Chirikov-Taylor Map) - Chaotic Algorithm**: Model chaotic behavior with the standard map (Chirikov-Taylor map).
+
+- **VIX Time Series with Highlighted Trend Changes**: Analyze VIX time series data and highlight significant trend changes for better insights.
+- **Monte Carlo Shuffled Projection for VIX**: Use Monte Carlo simulations to create shuffled projections of VIX data, allowing for uncertainty quantification.
+- **Monte Carlo Prediction of VIX**: Implement Monte Carlo methods to predict future VIX values based on historical data patterns.
+- **MCMC Projections for VIX**: Apply Markov Chain Monte Carlo (MCMC) techniques to generate projections for VIX, enhancing predictive accuracy.
+- **Markov Regime Switching Model**: Utilize a Markov regime switching model to identify different market regimes and their impact on VIX.
+- **Perturbation Analysis and Future Projections for VIX**: Conduct perturbation analysis to assess the effects of small changes in parameters on future VIX projections.
+- **Synthetic Control Method for VIX**: Implement the synthetic control method to estimate the causal effect of interventions on VIX.
+- **Projections Using Latin Hypercube Sampling (LHS)**: Use Latin Hypercube Sampling to create projections for VIX, ensuring a more comprehensive exploration of uncertainty.
+- **VIX Projections Using Geometric Brownian Motion (GBM)**: Model VIX projections using Geometric Brownian Motion to capture the stochastic nature of financial markets.
+- **Recurrence Quantification Analysis (RQA)**: Perform Recurrence Quantification Analysis to study the dynamics of VIX time series and identify patterns.
+- **VIX Forecast Using Chaos Neural Network**: Leverage chaos neural networks to forecast VIX, utilizing complex patterns in historical data.
 
 ## How to Use
 
